@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "218550087297",
+    "project_id": "go1tok",
+    "storage_bucket": "go1tok.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218550087297:android:9277c296f826af398ae780",
+        "android_client_info": {
+          "package_name": "com.midnight.greatdevelopers.go1tok"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218550087297-m4vpm29tri1goj31suqr5fi1gt2elubj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.midnight.greatdevelopers.go1tok",
+            "certificate_hash": "32e3f3803c41796eba65ad9f8e2f3f9ddc888715"
+          }
+        },
+        {
+          "client_id": "218550087297-rcj6ndhtb1t1aa8rggf75aquqhv535cp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZJRxYZmX5rowI18q6rJWwyc4rDjV1VFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218550087297-rcj6ndhtb1t1aa8rggf75aquqhv535cp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "218550087297-7ob5d9kcktblk3n5b37cfaa98vq9oodg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.midnight.greatdevelopers.go1tok"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
