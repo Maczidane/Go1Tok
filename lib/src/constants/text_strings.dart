@@ -150,3 +150,63 @@ const String tBackLogin ="back to login";
 const String tVerifyEmailText ="We have just sent an email verification link to your email. Please check email and click on the link to verify your email address\n\n\n If not auto redirected after verification, click on the Continue button.";
 
 
+// Drawer TExt
+
+const String tSettings = "Settings";
+const String tLogOut = "LogOut";
+const String tCovid19 = "Covid-19 Update";
+const String tImportantLinks = "Important Links";
+const String tNotification = "Notifications";
+const String tContactUs = "Contact Us";
+const String tAboutUs = "About Us";
+const String tFeedback = "Feedback";
+const String tMyProfile = "My Profile";
+
+const String tUseAsGuest = "Use as guest";
+
+//Bottom navigation text
+
+const String homeText ="Home";
+const String bookText ="Book";
+const String myTripText ="My Trip";
+const String checkInText ="Check-in";
+
+
+//Google Api key
+
+const String googleApiKey = "AIzaSyDttQ6M-PumYnfWvdunS5uwJOBLi_qk_oE";
+
+///Choice Chip text
+
+const String tFlights = "Flights";
+const String tHotels = "Hotels";
+const String tTaxi = "Taxi";
+
+
+/// Top Home Container and Drawer
+const String tRecentFlight ="Recent flight searches";
+const String tRecentHotel="Recent hotel searches";
+const String tRecentTaxi ="Recent taxi searches";
+const String tViewAll ="VIEW ALL";
+const String tLoginToSee ="Login to see";
+const String tLoginToContinue ="Login to continue";
+const String tPleaseLogin ="Login to change user settings";
+const String tLoadingUserInfo ="Loading user info....";
+const String tSomethingWentWrong ="Something went wrong";
+const String tChangeProfilePic="Changing profile picture...";
+const String tCompleting="Completing...";
+const String tErrorTitle ="Error";
+const String tErrorGetImage ="Failed to upload image:";
+const String tErrorPickImage ="Failed to pick image:";
+const String tEmpty ="Image error";
+const String tImageError ="No image selected";
+const String tSelectFrom ="Select image from: ";
+const String tContinueWith ="Continue with";
+const String tPickFromCamera ="Camera";
+const String tPickFromGallery ="Gallery";
+//const String tChoose ="Choose";
+
+/// Log Out
+
+const String tLoggingOut = "Logging Out...";
+const String tUnableToLogOut = "Unable to logout. Please try again";

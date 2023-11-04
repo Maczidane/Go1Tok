@@ -26,3 +26,5 @@ const tBlueColor = Color(0xFF1e90ff);
 const tGoogleBgColor = Color(0xFF1e90ff);
 const tGoogleForegroundColor = Color(0xFFD5FFFF);
 
+
+const secondPrimaryColor = Color(0xFF5E05F3);

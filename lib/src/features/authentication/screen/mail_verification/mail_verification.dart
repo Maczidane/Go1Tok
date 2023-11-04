@@ -67,7 +67,7 @@ class MailVerification extends StatelessWidget {
               ),
 
               TextButton(
-                  onPressed: () => AuthenticationRepository.instance.logOut(),
+                  onPressed: () => AuthenticationRepository.instance.logOut(context),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

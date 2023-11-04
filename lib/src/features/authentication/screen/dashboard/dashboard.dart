@@ -1,21 +1,27 @@
 import 'package:Go1Tok/src/features/authentication/controllers/dashboard_controller.dart';
+import 'package:Go1Tok/src/features/authentication/screen/drawer_screen/drawer_screen.dart';
+import 'package:Go1Tok/src/features/authentication/screen/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
-class Dashboard extends StatelessWidget {
-   Dashboard({super.key});
+class Dashboard extends StatefulWidget {
+   const Dashboard({super.key});
 
-  final controller = DashboardController();
+  @override
+  State<Dashboard> createState() => _DashboardState();
+}
+
+class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Dashboard"),
-        leading: IconButton(
-          onPressed: () => controller.logOut(),
-          icon: const Icon(Icons.exit_to_app),
-        ),
-      ),
+
+
+    return const Stack(
+        children: [
+          DrawerScreen(),
+          HomeScreen(),
+        ],
+
     );
   }
 }

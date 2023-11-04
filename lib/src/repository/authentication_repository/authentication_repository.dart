@@ -1,11 +1,9 @@
-import 'package:Go1Tok/src/features/authentication/controllers/log_in_controller.dart';
+import 'package:Go1Tok/src/constants/text_strings.dart';
 import 'package:Go1Tok/src/features/authentication/screen/dashboard/dashboard.dart';
 import 'package:Go1Tok/src/features/authentication/screen/login/login_screen.dart';
 import 'package:Go1Tok/src/features/authentication/screen/mail_verification/mail_verification.dart';
 import 'package:Go1Tok/src/features/authentication/screen/on_boarding/on_boarding_screen.dart';
-import 'package:Go1Tok/src/features/authentication/screen/welcome/welcome_screen.dart';
 import 'package:Go1Tok/src/repository/exceptions/custom_exceptions.dart';
-import 'package:Go1Tok/src/repository/exceptions/signup-email_passwird_failure.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +11,8 @@ import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:sn_progress_dialog/progress_dialog.dart';
+
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -46,7 +46,7 @@ class AuthenticationRepository extends GetxController {
     FlutterNativeSplash.remove();
 
     ///Ever method id used to make a method always run
-    //ever(firebaseUser, _setInitialScreen);
+   // ever(_firebaseUser, setInitialScreen);
 
     setInitialScreen(_firebaseUser.value);
   }
@@ -61,7 +61,7 @@ class AuthenticationRepository extends GetxController {
     user == null
         ? Get.offAll(() => const OnBoarding())
         : user.emailVerified
-            ? Get.offAll(() => Dashboard())
+            ? Get.offAll(() => const Dashboard())
             : Get.offAll(() => const MailVerification());
   }
 
@@ -184,7 +184,16 @@ class AuthenticationRepository extends GetxController {
 
   /// LogOut User
 
-  Future<void> logOut() async {
+  Future<void> logOut(BuildContext context) async {
+
+    ProgressDialog  pd = ProgressDialog(context: context);
+
+   pd.show(
+     barrierDismissible: false,
+     msg: tLoggingOut,
+     hideValue: true,
+
+   );
     try {
       //Do google logout
       await GoogleSignIn().signOut();
@@ -193,13 +202,17 @@ class AuthenticationRepository extends GetxController {
       //await facebookLoginPlugin.logOut();
 
       await _auth.signOut();
-      Get.offAll(() => const WelcomeScreen());
+      pd.close();
+      Get.offAll(() => const OnBoarding());
     } on FirebaseAuthException catch (e) {
+      pd.close();
       throw e.message!;
     } on FormatException catch (e) {
+      pd.close();
       throw e.message;
     } catch (e) {
-      throw "Unable to logout. Please try again" + e.toString();
+      pd.close();
+      throw tUnableToLogOut + e.toString();
     }
   }
 

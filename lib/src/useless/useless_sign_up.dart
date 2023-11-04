@@ -34,39 +34,6 @@ class _UselessSignUpFormWidgetState extends State<UselessSignUpFormWidget> {
 
     int x = 0;
 
-    void _validateInputs() async {
-      if (formKey.currentState!.validate()) {
-        _dialog.show(
-            message: 'Creating user...',
-            type: SimpleFontelicoProgressDialogType.multiHurricane);
-
-
-        formKey.currentState!.save();
-        final user = UserModel(
-          email: controller.email.text.trim(),
-          password: controller.password.text.trim(),
-          firstName: controller.firstName.text.trim(),
-          lastName: controller.lastName.text.trim(),
-          phoneNumber: controller.phoneNumber.text.trim(),
-          // verifiedEmail: tVerifiedEmail,
-          // verifiedPhone: tVerifiedPhone,
-        );
-
-        SignUpController.instance.createUser().whenComplete((){
-
-          _dialog.hide();
-
-        }) .catchError((onError){
-
-          print("Error ${onError.toString()}");
-
-        });
-
-
-      } else {
-        formKey.currentState?.validate();
-      }
-    }
 
     return Container(
       padding: const EdgeInsets.symmetric(vertical: tFormHeight - 10),

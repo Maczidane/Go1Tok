@@ -1,11 +1,15 @@
 import 'package:Go1Tok/src/constants/colors.dart';
 import 'package:Go1Tok/src/constants/size.dart';
+import 'package:dialogs/dialogs/message_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:function_tree/function_tree.dart';
 
 class Helper extends GetxController {
   ///Snack Bars
+
+
 
   static successSnackBar({required title, message}) {
     Get.snackbar(
@@ -22,6 +26,41 @@ class Helper extends GetxController {
 
     );
   }
+
+  static messageSnackBar({required title, message}) {
+    Get.snackbar(
+        title,
+        message,
+        isDismissible: true,
+        shouldIconPulse: true,
+        colorText: tWhiteColor,
+        backgroundColor: Colors.blueAccent,
+        snackPosition: SnackPosition.BOTTOM,
+        duration: const Duration(seconds: 6),
+
+        margin: const EdgeInsets.all(tDefaultSize - 10),
+
+    );
+  }
+
+  static normalSnackBar({required title, message}) {
+    Get.snackbar(
+      title,
+      message,
+      isDismissible: true,
+      shouldIconPulse: true,
+      colorText: tWhiteColor,
+      backgroundColor: tDarkColor,
+      snackPosition: SnackPosition.BOTTOM,
+      duration: const Duration(seconds: 6),
+
+      margin: const EdgeInsets.all(tDefaultSize - 10),
+
+    );
+  }
+
+
+
   static modernSnackBar({required title, message}) {
     Get.snackbar(
         title,

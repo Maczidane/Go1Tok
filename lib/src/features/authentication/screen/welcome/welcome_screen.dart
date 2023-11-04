@@ -5,6 +5,7 @@ import 'package:Go1Tok/src/constants/colors.dart';
 import 'package:Go1Tok/src/constants/image_strings.dart';
 import 'package:Go1Tok/src/constants/size.dart';
 import 'package:Go1Tok/src/constants/text_strings.dart';
+import 'package:Go1Tok/src/features/authentication/screen/dashboard/dashboard.dart';
 import 'package:Go1Tok/src/features/authentication/screen/login/login_screen.dart';
 import 'package:Go1Tok/src/features/authentication/screen/signup/sign_up_screen.dart';
 import 'package:flutter/material.dart';
@@ -94,7 +95,24 @@ class WelcomeScreen extends StatelessWidget {
                           ),
                         ),
                       ],
-                    )
+                    ),
+
+                    const  SizedBox(height: tDefaultSize,),
+
+                    GestureDetector(
+                      onTap: (){
+                        Get.offAll(() => const Dashboard());
+                      },
+                      child: const Text(tUseAsGuest, style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: tBlueColor,
+                        decoration: TextDecoration.underline,
+                        fontSize: tDefaultFontSize,
+                      ),),
+                    ),
+
+                    const  SizedBox(height: tDefaultSize,),
+
                   ],
                 ),
               ),

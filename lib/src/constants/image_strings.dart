@@ -32,3 +32,8 @@ const String tGoogleLogo2 = "assets/logo/google-logo4.png";
 
 /*-- Forgot Password Images -- */
 const String tForgotPasswordImage = "assets/logo/forgot.png";
+
+/* -- User images --*/
+
+const String tUserImage1 = "assets/logo/user1.png";
+const String tUserImage2 = "assets/logo/user2.png";

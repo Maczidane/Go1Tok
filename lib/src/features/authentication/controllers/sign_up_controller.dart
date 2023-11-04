@@ -1,5 +1,4 @@
 import 'package:Go1Tok/src/features/authentication/models/user_model.dart';
-import 'package:Go1Tok/src/features/authentication/screen/forgot_password/forgot_password_otp/forgot_password_otp.dart';
 import 'package:Go1Tok/src/repository/authentication_repository/authentication_repository.dart';
 import 'package:Go1Tok/src/repository/user_repository/user_repository.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +7,6 @@ import 'package:get/get.dart';
 class SignUpController extends GetxController {
   static SignUpController get instance => Get.find();
 
-  //TextField Controller to get data from TextFields
   final email = TextEditingController();
   final password = TextEditingController();
   final firstName = TextEditingController();
@@ -86,6 +84,7 @@ class SignUpController extends GetxController {
           email: email.text.trim(),
           phoneNumber: phoneNumber.text.trim(),
           password: password.text.trim(),
+        imageUrl: '',
           //verifiedEmail: verifiedEmail,
          // verifiedPhone: verifiedPhone,
       );
