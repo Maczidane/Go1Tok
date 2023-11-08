@@ -1,6 +1,6 @@
 # go1tok
 
-Go1Tok is a Flight, hotel and taxi booking app.
+Got1Tok App. Flight Booking, Hotel and Taxi booking app. It uses travel payout sdk, amadeus, Kiwi and so many others to get data and best offers.
 
 ## Getting Started
 
