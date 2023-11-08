@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:Go1Tok/src/constants/text_strings.dart';
 import 'package:Go1Tok/src/features/authentication/models/user_model.dart';
+import 'package:Go1Tok/src/features/authentication/screen/dashboard/dashboard.dart';
 import 'package:Go1Tok/src/repository/authentication_repository/authentication_repository.dart';
 import 'package:Go1Tok/src/repository/user_repository/user_repository.dart';
 import 'package:Go1Tok/src/utils/helper.dart';
@@ -9,6 +10,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
@@ -54,9 +56,11 @@ class DrawerControllers extends GetxController {
   }
 
    pickImage(ImageSource imageSource, String? id, BuildContext context) async {
+
    try{
     final ImagePicker picker = ImagePicker();
     final XFile? file = await picker.pickImage(source: imageSource);
+    //Navigator.pop(context);
 
     if(file == null){
       Helper.errorSnackBar(title: tEmpty , message: tImageError);
@@ -67,18 +71,10 @@ class DrawerControllers extends GetxController {
       docID = id!;
       //print("Document ID:$docID");
 
+      Navigator.pop(context);
+
+      //
       pd  = ProgressDialog(context: context);
-
-      pd.show(
-        max: 100,
-          barrierDismissible: false,
-          msg: tChangeProfilePic,
-
-          hideValue: true,
-          completed: Completed(
-              completionDelay: 2500,
-          )
-      );
 
      uploadImage(file);
 
@@ -86,6 +82,9 @@ class DrawerControllers extends GetxController {
     }
   } catch (e) {
       Helper.errorSnackBar(title: tErrorTitle , message: '$tErrorPickImage $e');
+      if (kDebugMode) {
+        print("Error: $e");
+      }
       pd.close();
       return false;
    }
@@ -94,6 +93,19 @@ class DrawerControllers extends GetxController {
 
 
  uploadImage(XFile file) async{
+
+
+
+   pd.show(
+       max: 100,
+       barrierDismissible: false,
+       msg: tChangeProfilePic,
+
+       hideValue: true,
+       completed: Completed(
+         completionDelay: 2500,
+       )
+   );
 
     try{
   File image  = File(file.path);
@@ -128,7 +140,11 @@ class DrawerControllers extends GetxController {
     drawerImage = url;
 
 
-    pd.close();
+   // pd.close();
+
+
+
+    Get.offAll(() => const Dashboard());
 }
 
 

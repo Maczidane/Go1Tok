@@ -194,7 +194,7 @@ const String tPleaseLogin ="Login to change user settings";
 const String tLoadingUserInfo ="Loading user info....";
 const String tSomethingWentWrong ="Something went wrong";
 const String tChangeProfilePic="Changing profile picture...";
-const String tCompleting="Completing...";
+const String tCompleting="Finishing Upload...";
 const String tErrorTitle ="Error";
 const String tErrorGetImage ="Failed to upload image:";
 const String tErrorPickImage ="Failed to pick image:";
@@ -210,3 +210,20 @@ const String tPickFromGallery ="Gallery";
 
 const String tLoggingOut = "Logging Out...";
 const String tUnableToLogOut = "Unable to logout. Please try again";
+
+
+
+///Flight Search Screen
+const String tFrom = "From";
+const String tTo = "To";
+const String tDeparture = "Departure";
+const String tReturn = "Return";
+const String tArrival = "Arrival";
+const String tClass = "Passenger & Class";
+const String tOneWay = "One Way";
+const String tRoundTrip = "Round Trip";
+const String tMultiCity = "Multi-City";
+const String tSearchFlight = "Flight Search";
+const String tFindFlight = "Find Flight";
+const String tBestPriceGuarantee = "Best price guarantee";
+const String tEconomy = "Economy, 1 Adult";

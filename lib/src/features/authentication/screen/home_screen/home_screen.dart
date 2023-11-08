@@ -48,11 +48,19 @@ class _HomeScreenState extends State<HomeScreen> {
         color: tWhiteColor
       ),
       child: Scaffold(
+
         appBar: AppBar(
             elevation: 0,
-            backgroundColor: tWhiteColor,
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+
+                  colors: <Color>[tPrimaryColor,
+                    secondPrimaryColor,]),
+            ),
+          ),
             centerTitle: true,
-            title: const Text("Go1Tok Dashboard", textAlign: TextAlign.center, style: TextStyle(color: tDarkColor),),
+            title: const Text("Go1Tok Dashboard", textAlign: TextAlign.center, style: TextStyle(color: tWhiteColor),),
             leading: isDrawerOpen
                 ? IconButton(
                     onPressed: () {
@@ -66,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     icon: const Icon(
                       Icons.arrow_back_ios,
-                      color: tDarkColor,
+                      color: tWhiteColor,
                     ))
                 : IconButton(
                     onPressed: () {
@@ -82,14 +90,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     icon: const Icon(
                       Icons.menu,
-                      color: tDarkColor,
+                      color: tWhiteColor,
                     )),
-            actions: [
-              IconButton(
-                onPressed: () => controller.logOut(context),
-                icon: const Icon(Icons.exit_to_app),
-              ),
-            ]),
+            ),
         bottomNavigationBar:  Obx(
           () => NavigationBar(
             height: tDefaultSize *3,

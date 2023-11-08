@@ -326,14 +326,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
-  flutter_login_facebook:
-    dependency: "direct main"
-    description:
-      name: flutter_login_facebook
-      sha256: "05ced7a4297a761859729c512727c0d25f01bd40c38a27e0c203f6b86be8d055"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.8.0"
   flutter_native_splash:
     dependency: "direct main"
     description:
@@ -568,6 +560,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.1+1"
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.18.1"
   js:
     dependency: transitive
     description:
@@ -616,14 +616,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.0"
-  list_ext:
-    dependency: transitive
-    description:
-      name: list_ext
-      sha256: a38869a6911830f39ace7534972d01e573e17917955b26215e54d5797eb8d5cd
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.6"
   location:
     dependency: "direct main"
     description:
@@ -704,6 +696,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
+  path_drawing:
+    dependency: "direct main"
+    description:
+      name: path_drawing
+      sha256: bbb1934c0cbb03091af082a6389ca2080345291ef07a5fa6d6e078ba8682f977
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   path_parsing:
     dependency: transitive
     description:

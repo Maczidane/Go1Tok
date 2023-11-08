@@ -142,15 +142,16 @@ class _HomeScreenTopContainerState extends State<HomeScreenTopContainer> {
                     TextEditingController(text: "$state, $countryName"),
                     style: Theme.of(context).textTheme.bodyLarge ,
                     cursorColor: tPrimaryColor,
-                    decoration: const InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(
+                    decoration:  InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(
                           horizontal: tDefaultWidth + 2.0, vertical: 14.0),
                       suffixIcon: Material(
                         elevation: tDefaultElevation - 3.0,
                         borderRadius:
-                        BorderRadius.all(Radius.circular(tDefaultSize)),
-                        child: Icon(
-                          Icons.search_rounded,
+                        const BorderRadius.all(Radius.circular(tDefaultSize)),
+                        child: IconButton(
+                          icon: const Icon(Icons.search_rounded),
+                         onPressed: () => homeController.gotoSearchScreen(),
                          // color: tDarkColor,
                         ),
                       ),
@@ -160,6 +161,7 @@ class _HomeScreenTopContainerState extends State<HomeScreenTopContainer> {
                       errorBorder: InputBorder.none,
                       disabledBorder: InputBorder.none,
                     ),
+                   // onSubmitted: ()=>,
                   ),
                 ),
               ),

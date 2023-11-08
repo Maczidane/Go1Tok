@@ -5,6 +5,7 @@
 import 'package:flutter/widgets.dart';
 
 const tDefaultSize = 30.0;
+const tDefaultBorder = 10.0;
 const tDefaultWidth = 16.0;
 const tSmallWidth = 5.0;
 const tLargeWidth = 20.0;
@@ -37,6 +38,8 @@ const double tDefaultIconSize = 20.0;
 const double tMediumIconSize = 25.0;
 const double tLargeIconSize = 30.0;
 const double tDefaultRadius = 20.0;
+const double tMediumRadius = 10.0;
+const double tSmallRadius = 8.0;
 
 //Default App bar height
 
@@ -54,6 +57,13 @@ const double secondControlPointHeight = 10.0;
 const double defaultContainerHeight = 210.0;
 const double defaultHorizontalPadding = 20.0;
 const double defaultVerticalPadding = 20.0;
+const double defaultBottomMargin = 12.0;
+
+/// recently Viewed Cards
+const double defaultPositionBottom= 10.0;
+const double defaultPositionTop = 10.0;
+const double defaultPositionLeft = 10.0;
+const double defaultPositionRight = 10.0;
 
 
 

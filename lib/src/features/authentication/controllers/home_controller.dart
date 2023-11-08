@@ -1,4 +1,5 @@
 import 'package:Go1Tok/src/constants/text_strings.dart';
+import 'package:Go1Tok/src/features/authentication/screen/dashboard/flight/flight_search.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -44,7 +45,7 @@ class HomeController extends GetxController{
      isFlightSelected.value = false;
      isHotelSelected.value = false;
      isTaxiSelected.value = true;
-     print("In here Taxi");
+
 
       //TODO: Do number of searches for taxi
     }
@@ -52,6 +53,20 @@ class HomeController extends GetxController{
   }
 
 
+
+  gotoSearchScreen (){
+
+    if(isFlightSelected.value){
+      Get.to(() =>  FlightSearch());
+    }
+    else if(isHotelSelected.value){
+
+    }
+    else{
+
+    }
+
+  }
 
 
 

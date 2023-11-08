@@ -37,3 +37,9 @@ const String tForgotPasswordImage = "assets/logo/forgot.png";
 
 const String tUserImage1 = "assets/logo/user1.png";
 const String tUserImage2 = "assets/logo/user2.png";
+
+/*-- Recently Viewed Sample Images */
+
+const String tLasVegas = "assets/images/las_vegas.jpg";
+const String tLasVegas2 = "assets/images/las_vegas2.jpg";
+const String tLasVegas3 = "assets/images/las_vegas3.jpg";
