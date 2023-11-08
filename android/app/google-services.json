@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "218550087297-4q80jlacvdbj6rg284rmpvh7ahfh1glt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.midnight.greatdevelopers.go1tok",
+            "certificate_hash": "c9eca0c119fbf463c469b088228884c66c38435f"
+          }
+        },
+        {
           "client_id": "218550087297-m4vpm29tri1goj31suqr5fi1gt2elubj.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

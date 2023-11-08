@@ -109,18 +109,20 @@ class _DrawerScreenState extends State<DrawerScreen> {
 
                                       negativeTextStyle: Theme.of(context).textTheme.bodyMedium,
                                       onPositiveClick: () {
-                                       Navigator.of(context).pop();
+                                       //Navigator.of(context).pop();
                                         drawerController.pickImage(
                                             ImageSource.camera,
                                             userData.id,
                                             context);
+                                        //Navigator.of(context).pop();
                                       },
                                       onNegativeClick: () {
-                                        Navigator.of(context).pop();
+                                       // Navigator.of(context).pop();
                                         drawerController.pickImage(
                                             ImageSource.gallery,
                                             userData.id,
                                             context);
+                                        //Navigator.of(context).pop();
                                       },
                                     );
                                   },

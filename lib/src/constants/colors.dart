@@ -28,3 +28,5 @@ const tGoogleForegroundColor = Color(0xFFD5FFFF);
 
 
 const secondPrimaryColor = Color(0xFF5E05F3);
+const greyColor = Colors.grey;
+const redAccentColor = Colors.redAccent;
