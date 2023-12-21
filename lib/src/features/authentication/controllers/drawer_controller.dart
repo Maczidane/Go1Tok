@@ -1,17 +1,14 @@
 import 'dart:io';
 
 import 'package:Go1Tok/src/constants/text_strings.dart';
-import 'package:Go1Tok/src/features/authentication/models/user_model.dart';
 import 'package:Go1Tok/src/features/authentication/screen/dashboard/dashboard.dart';
 import 'package:Go1Tok/src/repository/authentication_repository/authentication_repository.dart';
 import 'package:Go1Tok/src/repository/user_repository/user_repository.dart';
 import 'package:Go1Tok/src/utils/helper.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';

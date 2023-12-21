@@ -220,6 +220,7 @@ const String tDeparture = "Departure";
 const String tReturn = "Return";
 const String tArrival = "Arrival";
 const String tClass = "Passenger & Class";
+const String tPassenger = "passenger(s)";
 const String tOneWay = "One Way";
 const String tRoundTrip = "Round Trip";
 const String tMultiCity = "Multi-City";
@@ -227,3 +228,127 @@ const String tSearchFlight = "Flight Search";
 const String tFindFlight = "Find Flight";
 const String tBestPriceGuarantee = "Best price guarantee";
 const String tEconomy = "Economy, 1 Adult";
+
+/// Passenger and class
+
+const String tEconomyClass = "Economy";
+const String tPremiumClass = "Premium Economy";
+const String tBusinessClass = "Business";
+const String tFirstClass = "First Class";
+const String tApply = "Apply";
+const String tPremium = "Premium";
+
+
+///Hotel
+///
+const String tHotelSearch = "Hotel Search";
+const String tDestination = "Destination";
+const String tCheckIn = "Check-In";
+const String tCheckOut = "Check-Out";
+const String tSearch = "Search";
+const String tAddRoom = "Add Room";
+const String t1Adult = "1 Adult";
+const String tAdult = "Adult";
+const String tAdults = "Adults";
+const String tChild= "Child";
+const String tSave= "SAVE";
+///Intended typo below
+const String tChildrens = "Children";
+const String t1Adult2 = "2 Adults";
+const String t1Adult3 = "3 Adults";
+const String t1Adult4 = "4 Adults";
+const String t1Adult5 = "5 Adults";
+const String t1Adult6 = "6 Adults";
+const String t1Children = "1 Child";
+const String t1Children2 = "2 Children";
+const String t1Children3 = "3 Children";
+const String t1Children4= "4 Children";
+
+const String tRoom1 = "Room 1";
+const String tRoom2 = "Room 2";
+const String tRoom3 = "Room 3";
+const String tCancel = "Cancel";
+const String tConfirm = "Confirm";
+const String tChild1 = "Child 1";
+const String tChild2 = "Child 2";
+const String tChild3 = "Child 3";
+const String tChild4 = "Child 4";
+const String tChildrenText = "Children";
+const String tAdult12 = "Adult 12+ years";
+const String tChildren = "Children 2 - 11 years";
+const String tGuestInfo = "Guest information";
+const String tSelectNumber = "Select number";
+const String tSelectAge = "Select child's age";
+//const String tAddRoom = "Add Room";
+
+
+const String tEnjoy = "Enjoy the Best Travel Deals Today";
+const String tDealsText = "Deals";
+
+///
+const String tSearchResults = "Search Results";
+
+const String tPrice = "Price";
+const String tToCityCenter = " - City Center";
+
+
+const String tOneNight = "for 1 night";
+const String tForNight = "for ";
+const String tNight = " night";
+const String tRoomLeft = " room(s) left";
+const String tDiscount = "Discount";
+
+const String tFilters = "Filters";
+const String tMap = "Map";
+const String tList = "List";
+const String tPriceChart = "Price chart";
+
+const String tReset = "RESET";
+const String tSortBy = "Sort by";
+const String tRating = "Rating";
+
+const String tLocation = "Location";
+const String tChooseOnMap = "Choose on map";
+const String tCityCenter = "CITY CENTER";
+const String tUpTo = "up to";
+const String tKm = "km";
+const String tMeals = "Meals and payment";
+const String tBreakfast = "Breakfast";
+const String tFreeCancellation = "Free cancellation";
+const String tPayNow = "Pay Now";
+const String tPayAtHotel = "Pay at the Hotel";
+const String tPropertyType = "Property type";
+const String tHostels = "Hostels";
+const String tHotel = "Hotel";
+const String tApartments = "Apartments";
+
+const String tShow ="Show";
+//const String tHotel
+
+const String tDirectFlightSchedule = "Direct flights schedule";
+const String tEasyJet = "EasyJet";
+const String tAirFrance = "Air France";
+const String tBritishAirways = "British Airways";
+const String tCheapest = "Cheapest";
+const String tPopular = "Popular";
+const String tDirect = "Direct";
+const String tTickets = "tickets";
+const String tTravelTime = "Travel time:";
+
+
+///Flight Result Filters
+const String tPopularFilters = "Popular filters";
+const String tLayOvers = "Layovers";
+const String tBaggageIncluded = "Baggage included";
+const String tDirectFlights = "Direct flights";
+const String tDepartureFrom = "Departure from";
+const String tNoInterline = "No interline bookings";
+const String tNoOverNight = "No overnight layovers";
+const String tNoAirportChanges = "No airport changes";
+const String tMorning = "Morning";
+const String tDay = "Day";
+const String tEvening = "Evening";
+
+
+
+

@@ -1,6 +1,7 @@
 import 'package:Go1Tok/src/constants/colors.dart';
 import 'package:Go1Tok/src/constants/size.dart';
 import 'package:Go1Tok/src/constants/text_strings.dart';
+import 'package:Go1Tok/src/features/authentication/screen/dashboard/Home2/home2.dart';
 import 'package:Go1Tok/src/features/authentication/screen/dashboard/check_in.dart';
 import 'package:Go1Tok/src/features/authentication/screen/dashboard/my_trip.dart';
 import 'package:Go1Tok/src/utils/helper.dart';
@@ -122,10 +123,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
 class NavigationController extends GetxController{
+
   final Rx<int> selectedIndex = 0.obs;
 
   final screens = [
-   Home(),
+    ///My client Preferred a more simple home
+   //Home(),
+    Home2(),
     Book(),
     MyTrip(),
     CheckIn(),

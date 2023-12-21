@@ -1,4 +1,7 @@
 import 'package:Go1Tok/src/constants/colors.dart';
+import 'package:Go1Tok/src/features/authentication/models/country_list.dart';
+import 'package:Go1Tok/src/features/authentication/screen/dashboard/flight/flight_results/flight_search_result.dart';
+import 'package:Go1Tok/src/features/authentication/screen/dashboard/flight/passenger_class.dart';
 import 'package:flutter/material.dart';
 import 'package:Go1Tok/src/constants/size.dart';
 import 'package:Go1Tok/src/constants/text_strings.dart';
@@ -13,9 +16,23 @@ class FlightListTopPart extends StatelessWidget {
 final flightController = Get.put(FlightSearchController());
    FlightListTopPart({super.key});
 
+static const List<StateModel> usStates = <StateModel>[
+  StateModel('Alabama', 'AL'),
+  StateModel('Alaska', 'AK'),
+  StateModel('Arizona', 'AZ'),
+  StateModel('Arkansas', 'AR'),
+  StateModel('California', 'CA'),
+  StateModel('Colorado', 'CO'),
+  StateModel('Connecticut', 'CT'),
+
+];
+
+
   @override
   Widget build(BuildContext context) {
     final flightSearchController = Get.put(FlightSearchController());
+
+    StateModel selectedUsState = usStates[0];
 
     return Stack(
       children: [
@@ -168,6 +185,7 @@ final flightController = Get.put(FlightSearchController());
     );
   }
 
+
   Widget oneWayCard(BuildContext context) => Column(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
@@ -277,103 +295,113 @@ final flightController = Get.put(FlightSearchController());
           ),
         ),
       ),
-      Card(
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(tMediumRadius)),
-        ),
-        margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
-        elevation: 10.0,
-        child: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(
-              horizontal: tDefaultPadding, vertical: tDefaultPadding),
-          child: flightController.departureDate.value.isEmpty ?  Text(
-            tDeparture,
-            style: Theme.of(context).textTheme.bodyMedium?.apply(
-              color: greyColor.withOpacity(0.9),
-            ),
-          ) :  Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                tDeparture,
-                style: Theme.of(context).textTheme.bodyMedium?.apply(
-                  color: greyColor.withOpacity(0.9),
-                ),
+      GestureDetector(
+        onTap:() => flightController.showWithoutRange(context),
+        child: Card(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(tMediumRadius)),
+          ),
+          margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
+          elevation: 10.0,
+          child: Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(
+                horizontal: tDefaultPadding, vertical: tDefaultPadding),
+            child: flightController.departureDate.value.isEmpty ?  Text(
+              tDeparture,
+              style: Theme.of(context).textTheme.bodyMedium?.apply(
+                color: greyColor.withOpacity(0.9),
               ),
-              Flexible(
-                flex: 2,
-                child: Text(
-                  flightController.departureDate.value,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.headlineMedium?.apply(
-                    //color: greyColor.withOpacity(0.9),
+            ) :  Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  tDeparture,
+                  style: Theme.of(context).textTheme.bodyMedium?.apply(
+                    color: greyColor.withOpacity(0.9),
                   ),
                 ),
-              )
-            ],
+                Flexible(
+                  flex: 2,
+                  child: Text(
+                    flightController.departureDate.value,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.headlineMedium?.apply(
+                      //color: greyColor.withOpacity(0.9),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
-      Card(
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(tMediumRadius)),
-        ),
-        margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
-        elevation: 10.0,
-        child: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(
-              horizontal: tDefaultPadding, vertical: tDefaultPadding),
-          child: flightController.passenger.value.isEmpty ?  Text(
-            tClass,
-            style: Theme.of(context).textTheme.bodyMedium?.apply(
-              color: greyColor.withOpacity(0.9),
-            ),
-          ) : Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                tClass,
-                style: Theme.of(context).textTheme.bodyMedium?.apply(
-                  color: greyColor.withOpacity(0.9),
-                ),
+      GestureDetector(
+        onTap: () => Get.to(() =>  PassengerAndClass()),
+        child: Card(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(tMediumRadius)),
+          ),
+          margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
+          elevation: 10.0,
+          child: Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(
+                horizontal: tDefaultPadding, vertical: tDefaultPadding),
+            child: flightController.passenger.value.isEmpty ?  Text(
+              tClass,
+              style: Theme.of(context).textTheme.bodyMedium?.apply(
+                color: greyColor.withOpacity(0.9),
               ),
-              Flexible(
-                flex: 2,
-                child: Text(
-                  flightController.passenger.value,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.headlineMedium?.apply(
-                    //color: greyColor.withOpacity(0.9),
+            ) : Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  tClass,
+                  style: Theme.of(context).textTheme.bodyMedium?.apply(
+                    color: greyColor.withOpacity(0.9),
                   ),
                 ),
-              )
-            ],
+                Flexible(
+                  flex: 2,
+                  child: Text(
+                    flightController.passenger.value,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.headlineMedium?.apply(
+                      //color: greyColor.withOpacity(0.9),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
       const SizedBox(height: tDefaultHeight,),
 
-      Container(
-        width: double.infinity,
-        margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
+      InkWell(
+        onTap: () => Get.to(() =>  FlightSearchResult(from: flightController.from.value, destination: flightController.to.value,passengerNumber: "1",toDate: flightController.departureDate.value,)),
 
-        decoration: BoxDecoration(
-            color: tAccentColor,
-            borderRadius: BorderRadius.circular(40)
-        ),
-        padding: const EdgeInsets.symmetric(
-            horizontal: tDefaultPadding, vertical: tDefaultPadding - 6.0 ),
-        child:  Center(
-          child: Text(
-            tFindFlight,
-            style: Theme.of(context).textTheme.headlineMedium?.apply(
-              color: tWhiteColor,
+        child: Container(
+          width: double.infinity,
+          margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
+
+          decoration: BoxDecoration(
+              color: tAccentColor,
+              borderRadius: BorderRadius.circular(40)
+          ),
+          padding: const EdgeInsets.symmetric(
+              horizontal: tDefaultPadding, vertical: tDefaultPadding - 6.0 ),
+          child:  Center(
+            child: Text(
+              tFindFlight,
+              style: Theme.of(context).textTheme.headlineMedium?.apply(
+                color: tWhiteColor,
+              ),
             ),
           ),
         ),
@@ -512,159 +540,174 @@ final flightController = Get.put(FlightSearchController());
           ),
         ),
       ),
-      Card(
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(tMediumRadius)),
-        ),
-        margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
-        elevation: 10.0,
-        child: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(
-              horizontal: tDefaultPadding, vertical: tDefaultPadding),
-          child: flightController.departureDate.value.isEmpty ?
-           Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    tDeparture,
-                    style: Theme.of(context).textTheme.bodyMedium?.apply(
-                      color: greyColor.withOpacity(0.9),
-                    ),
-                  ),
-                  const Icon(
-                    Icons.arrow_circle_right_rounded,
-                    color: tPrimaryColor,
-                  ),
-
-                  Text(
-                    tReturn,
-                    style: Theme.of(context).textTheme.bodyMedium?.apply(
-                      color: greyColor.withOpacity(0.9),
-                    ),
-                  ),
-                ],
-              )
-            ],
-          )  :  Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    tDeparture,
-                    style: Theme.of(context).textTheme.bodyMedium?.apply(
-                      color: greyColor.withOpacity(0.9),
-                    ),
-                  ),
-                  Flexible(
-                    flex: 2,
-                    child: Text(
-                      flightController.departureDate.value,
-                      overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.headlineMedium?.apply(
-                        //color: greyColor.withOpacity(0.9),
+      GestureDetector(
+        onTap: () => flightController.show(context),
+        child: Card(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(tMediumRadius)),
+          ),
+          margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
+          elevation: 10.0,
+          child: Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(
+                horizontal: tDefaultPadding, vertical: tDefaultPadding),
+            child: flightController.departureDate.value.isEmpty ?
+             Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      tDeparture,
+                      style: Theme.of(context).textTheme.bodyMedium?.apply(
+                        color: greyColor.withOpacity(0.9),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              const Icon(
-                Icons.arrow_circle_right_rounded,
-                color: tPrimaryColor,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-
-                children: [
-                  Text(
-                    tReturn,
-                    style: Theme.of(context).textTheme.bodyMedium?.apply(
-                      color: greyColor.withOpacity(0.9),
+                    const Icon(
+                      Icons.arrow_circle_right_rounded,
+                      color: tPrimaryColor,
                     ),
-                  ),
-                  Flexible(
-                    flex: 2,
-                    child: Text(
-                      flightController.returnDate.value,
-                      overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.headlineMedium?.apply(
-                        //color: greyColor.withOpacity(0.9),
+
+                    Text(
+                      tReturn,
+                      style: Theme.of(context).textTheme.bodyMedium?.apply(
+                        color: greyColor.withOpacity(0.9),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                )
+              ],
+            )  :
+            Row(
+
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+
+                  children: [
+                    Text(
+                      tDeparture,
+                      style: Theme.of(context).textTheme.bodyMedium?.apply(
+                        color: greyColor.withOpacity(0.9),
+                      ),
+                    ),
+                    Flexible(
+                      flex: 2,
+                      child: Text(
+                        flightController.departureDate.value,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context).textTheme.headlineMedium?.apply(
+                          //color: greyColor.withOpacity(0.9),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const Icon(
+                  Icons.arrow_circle_right_rounded,
+                  color: tPrimaryColor,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      tReturn,
+                      style: Theme.of(context).textTheme.bodyMedium?.apply(
+                        color: greyColor.withOpacity(0.9),
+                      ),
+                    ),
+                    Flexible(
+                      flex: 2,
+                      child: Text(
+                        flightController.returnDate.value,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context).textTheme.headlineMedium?.apply(
+                          //color: greyColor.withOpacity(0.9),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
-      Card(
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(tMediumRadius)),
-        ),
-        margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
-        elevation: 10.0,
-        child: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(
-              horizontal: tDefaultPadding, vertical: tDefaultPadding),
-          child: flightController.passenger.value.isEmpty ?  Text(
-            tClass,
-            style: Theme.of(context).textTheme.bodyMedium?.apply(
-              color: greyColor.withOpacity(0.9),
-            ),
-          ) : Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                tClass,
-                style: Theme.of(context).textTheme.bodyMedium?.apply(
-                  color: greyColor.withOpacity(0.9),
-                ),
+      GestureDetector(
+        onTap: () => Get.to(() =>  PassengerAndClass()),
+        child: Card(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(tMediumRadius)),
+          ),
+          margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
+          elevation: 10.0,
+          child: Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(
+                horizontal: tDefaultPadding, vertical: tDefaultPadding),
+            child: flightController.passenger.value.isEmpty ?  Text(
+              tClass,
+              style: Theme.of(context).textTheme.bodyMedium?.apply(
+                color: greyColor.withOpacity(0.9),
               ),
-              Flexible(
-                flex: 2,
-                child: Text(
-                  flightController.passenger.value,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.headlineMedium?.apply(
-                    //color: greyColor.withOpacity(0.9),
+            ) : Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  tClass,
+                  style: Theme.of(context).textTheme.bodyMedium?.apply(
+                    color: greyColor.withOpacity(0.9),
                   ),
                 ),
-              )
-            ],
+                Flexible(
+                  flex: 2,
+                  child: Text(
+                    flightController.passenger.value,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.headlineMedium?.apply(
+                      //color: greyColor.withOpacity(0.9),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
       const SizedBox(height: tDefaultHeight,),
 
-      Container(
-        width: double.infinity,
-        margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
+      InkWell(
+        onTap: () => Get.to(() =>  FlightSearchResult(from:flightController.from.value,destination: flightController.to.value,passengerNumber: flightController.passenger.value,toDate: flightController.departureDate.value,)),
 
-        decoration: BoxDecoration(
-            color: tAccentColor,
-            borderRadius: BorderRadius.circular(40)
-        ),
-        padding: const EdgeInsets.symmetric(
-            horizontal: tDefaultPadding, vertical: tDefaultPadding - 6.0 ),
-        child:  Center(
-          child: Text(
-            tFindFlight,
-            style: Theme.of(context).textTheme.headlineMedium?.apply(
-              color: tWhiteColor,
+        child: Container(
+          width: double.infinity,
+          margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
+
+          decoration: BoxDecoration(
+              color: tAccentColor,
+              borderRadius: BorderRadius.circular(40)
+          ),
+          padding: const EdgeInsets.symmetric(
+              horizontal: tDefaultPadding, vertical: tDefaultPadding - 6.0 ),
+          child:  Center(
+            child: Text(
+              tFindFlight,
+              style: Theme.of(context).textTheme.headlineMedium?.apply(
+                color: tWhiteColor,
+              ),
             ),
           ),
         ),
@@ -899,63 +942,69 @@ final flightController = Get.put(FlightSearchController());
           ),
         ),
       ),
-      Card(
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(tMediumRadius)),
-        ),
-        margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
-        elevation: 10.0,
-        child: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(
-              horizontal: tDefaultPadding, vertical: tDefaultPadding),
-          child: flightController.passenger.value.isEmpty ?  Text(
-            tClass,
-            style: Theme.of(context).textTheme.bodyMedium?.apply(
-              color: greyColor.withOpacity(0.9),
-            ),
-          ) : Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                tClass,
-                style: Theme.of(context).textTheme.bodyMedium?.apply(
-                  color: greyColor.withOpacity(0.9),
-                ),
+      GestureDetector(
+        onTap: () => Get.to(() =>  PassengerAndClass()),
+        child: Card(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(tMediumRadius)),
+          ),
+          margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
+          elevation: 10.0,
+          child: Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(
+                horizontal: tDefaultPadding, vertical: tDefaultPadding),
+            child: flightController.passenger.value.isEmpty ?  Text(
+              tClass,
+              style: Theme.of(context).textTheme.bodyMedium?.apply(
+                color: greyColor.withOpacity(0.9),
               ),
-              Flexible(
-                flex: 2,
-                child: Text(
-                  flightController.passenger.value,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.headlineMedium?.apply(
-                    //color: greyColor.withOpacity(0.9),
+            ) : Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  tClass,
+                  style: Theme.of(context).textTheme.bodyMedium?.apply(
+                    color: greyColor.withOpacity(0.9),
                   ),
                 ),
-              )
-            ],
+                Flexible(
+                  flex: 2,
+                  child: Text(
+                    flightController.passenger.value,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.headlineMedium?.apply(
+                      //color: greyColor.withOpacity(0.9),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
       const SizedBox(height: tDefaultHeight,),
 
-      Container(
-        width: double.infinity,
-        margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
+      InkWell(
+         onTap: () => Get.to(() =>  FlightSearchResult(from:flightController.from.value,destination: flightController.to.value,passengerNumber: flightController.passenger.value,toDate: flightController.departureDate.value,)),
+        child: Container(
+          width: double.infinity,
+          margin: const EdgeInsets.symmetric(horizontal: tDefaultPadding),
 
-        decoration: BoxDecoration(
-            color: tAccentColor,
-            borderRadius: BorderRadius.circular(40)
-        ),
-        padding: const EdgeInsets.symmetric(
-            horizontal: tDefaultPadding, vertical: tDefaultPadding - 6.0 ),
-        child:  Center(
-          child: Text(
-            tFindFlight,
-            style: Theme.of(context).textTheme.headlineMedium?.apply(
-              color: tWhiteColor,
+          decoration: BoxDecoration(
+              color: tAccentColor,
+              borderRadius: BorderRadius.circular(40)
+          ),
+          padding: const EdgeInsets.symmetric(
+              horizontal: tDefaultPadding, vertical: tDefaultPadding - 6.0 ),
+          child:  Center(
+            child: Text(
+              tFindFlight,
+              style: Theme.of(context).textTheme.headlineMedium?.apply(
+                color: tWhiteColor,
+              ),
             ),
           ),
         ),

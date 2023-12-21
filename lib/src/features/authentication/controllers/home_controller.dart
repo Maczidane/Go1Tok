@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import '../../../dialogues/message_dialogue.dart';
 import '../../../repository/authentication_repository/authentication_repository.dart';
+import '../screen/dashboard/hotel/hotel_search.dart';
 
 
 class HomeController extends GetxController{
@@ -57,10 +58,11 @@ class HomeController extends GetxController{
   gotoSearchScreen (){
 
     if(isFlightSelected.value){
-      Get.to(() =>  FlightSearch());
+      Get.to(() =>  const FlightSearch());
     }
     else if(isHotelSelected.value){
 
+      Get.to(() =>  const HotelSearch());
     }
     else{
 

@@ -1,13 +1,14 @@
 import 'package:Go1Tok/src/constants/colors.dart';
 import 'package:Go1Tok/src/constants/text_strings.dart';
-import 'package:Go1Tok/src/features/authentication/screen/dashboard/flight/flight_list_top_part.dart';
+
+import 'package:Go1Tok/src/features/authentication/screen/dashboard/hotel/hotel_list_top_part.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
-class FlightSearch extends StatelessWidget {
-  const FlightSearch({super.key});
+class HotelSearch extends StatelessWidget {
+  const HotelSearch({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class FlightSearch extends StatelessWidget {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(tSearchFlight),
+          title: const Text(tHotelSearch),
           centerTitle: true,
           elevation: 0,
           flexibleSpace: Container(
@@ -32,7 +33,7 @@ class FlightSearch extends StatelessWidget {
         ),
         body:   Column(
           children: [
-            FlightListTopPart(),
+            HotelListTopPart(),
           ],
         ),
       ),

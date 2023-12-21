@@ -43,3 +43,35 @@ const String tUserImage2 = "assets/logo/user2.png";
 const String tLasVegas = "assets/images/las_vegas.jpg";
 const String tLasVegas2 = "assets/images/las_vegas2.jpg";
 const String tLasVegas3 = "assets/images/las_vegas3.jpg";
+
+
+/* HomeScreen Minimal Images */
+
+const String tTaxi1= "assets/images/taxi_1.jpg";
+const String tTaxi2= "assets/images/taxi_2.jpg";
+const String tHotel1= "assets/images/hotel_1.jpg";
+const String tHotel2= "assets/images/hotel_2.jpg";
+const String tHotel3= "assets/images/hotel_3.jpg";
+const String tFlight1= "assets/images/flight.jpg";
+const String tFlight2= "assets/images/flight_2.jpg";
+const String tDeals= "assets/images/deals.jpg";
+
+
+///Hotel rooms
+const String tHRoom1= "assets/images/room1.jpg";
+const String tHRoom2= "assets/images/room2.jpg";
+const String tHRoom3= "assets/images/room3.jpg";
+
+/// API Calls
+
+
+const String tKiwiDefaultUrl = "tequila-api.kiwi.com/";
+const String tLocal = "en-US";
+const String tApiKey = "458572a2441bd623e06893db77c2ba5f";
+const String tMarker = "91847";
+
+
+///Flight logo Images
+const String iAirFrance= "assets/images/airFrance.png";
+const String iEasyJet= "assets/images/easyJet.png";
+const String iBritishAirways= "assets/images/britishAirways.png";

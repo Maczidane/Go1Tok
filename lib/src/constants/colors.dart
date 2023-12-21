@@ -20,6 +20,7 @@ const  tOnBoardColor2 = Color(0xFF641DDB);
 const  tOnBoardColor3 = Color(0xFFf48b6b);
 
 const tBlueColor = Color(0xFF1e90ff);
+const tLightPurpleColor = Color(0xFFEDE3FF);
 
 
 //Social Colors
@@ -30,3 +31,9 @@ const tGoogleForegroundColor = Color(0xFFD5FFFF);
 const secondPrimaryColor = Color(0xFF5E05F3);
 const greyColor = Colors.grey;
 const redAccentColor = Colors.redAccent;
+
+
+const chromeGrey = Color(0xffE6EDf5);
+
+
+const oxBlood = Color(0xff8b0000);
